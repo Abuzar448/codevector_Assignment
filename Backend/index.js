@@ -7,6 +7,11 @@ import productRoutes from './routes/products.routes.js';
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+  origin:'http://localhost:5173',
+  credentials:true,
+}))
 app.use(express.json());
 const PORT = process.env.PORT;
 
