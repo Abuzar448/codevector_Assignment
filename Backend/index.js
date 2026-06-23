@@ -15,12 +15,12 @@ app.use(cors({
 app.use(express.json());
 const PORT = process.env.PORT;
 
-app.use('/api/product',productRoutes); 
+app.use('/api/product',productRoutes);
 
 app.get('/',(req,res)=>{
 res.send('Welcome to backend server');
 })
 connectDB();
-app.listen(PORT,(req,res)=>{
+app.listen(PORT,()=>{
   console.log(`Server is running on port -- ${PORT}`);
 })

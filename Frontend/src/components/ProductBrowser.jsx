@@ -87,7 +87,7 @@ export default function ProductBrowser() {
             <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">Filter Cluster</label>
             <div className="h-4 w-[1px] bg-neutral-800"></div>
             <select
-              value={category}
+              value={category} 
               onChange={(e) => setCategory(e.target.value)}
               className="bg-transparent text-sm text-white font-medium focus:outline-none cursor-pointer pr-2 hover:text-purple-400 transition-colors duration-150"
             >
