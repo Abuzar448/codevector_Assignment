@@ -18,7 +18,10 @@ export default function ProductBrowser() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_BASE_URL = "http://localhost:8000/api/product/getProducts";
+  // CHANGED: Yahan hardcoded localhost hata kar dynamic environment variable lagaya hai
+  const API_BASE_URL = import.meta.env.VITE_API_URL 
+    ? `${import.meta.env.VITE_API_URL}/api/product/getProducts`
+    : "http://localhost:8000/api/product/getProducts";
 
   const fetchProducts = async (isLoadMore = false) => {
     try {
@@ -115,7 +118,6 @@ export default function ProductBrowser() {
               key={product._id} 
               className="group relative bg-[#121212] border border-neutral-900 rounded-2xl p-6 hover:border-neutral-700/60 transition-all duration-300 flex flex-col justify-between shadow-2xl hover:-translate-y-1"
             >
-              {/* Card Accent Top Glow on Hover */}
               <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
 
               <div>
