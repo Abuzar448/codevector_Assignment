@@ -19,9 +19,7 @@ export default function ProductBrowser() {
   const [error, setError] = useState(null);
 
   // CHANGED: Yahan hardcoded localhost hata kar dynamic environment variable lagaya hai
-  const API_BASE_URL = import.meta.env.VITE_API_URL 
-    ? `${import.meta.env.VITE_API_URL}/api/product/getProducts`
-    : "http://localhost:8000/api/product/getProducts";
+  const API_BASE_URL = "https://codevector-assignment-sand.vercel.app/api/product/getProducts";
 
   const fetchProducts = async (isLoadMore = false) => {
     try {
